@@ -402,6 +402,7 @@
       color: var(--dark);
       font-size: 1.4rem;
       margin-bottom: 10px;
+      width: 100%;
     }
 
     .resume-meta {
@@ -428,6 +429,7 @@
     .resume-item p {
       color: var(--gray);
       line-height: 1.7;
+      width: 100%;
     }
 
     .resume-item ul {
@@ -651,8 +653,82 @@
       .models-container {
         grid-template-columns: 1fr;
       }
+    }      
+
+    /* =================================
+      Publications Section (Home Page)
+      ================================= */
+
+    /* This creates the grid */
+    .publications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
     }
-    
+
+    /* This is the main card style */
+    .publication-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .publication-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* This is the image box */
+    .publication-image {
+      height: 550px; /* 1. FIX: Increased height */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .publication-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .publication-card:hover .publication-image img {
+      transform: scale(1.05);
+    }
+
+    /* This is the text overlay on the image */
+    .publication-overlay {
+       position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 20px;
+      color: white;
+    }
+
+    .publication-overlay h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .publication-overlay p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* This is the text content at the bottom */
+    .publication-content {
+      padding: 25px;
+    }
+
+    .publication-content p {
+      color: var(--gray);
+      margin-bottom: 0; /* Removed extra margin */
+    }
+
     /* Experience Section */
     .experience {
       background-color: var(--section-bg);
